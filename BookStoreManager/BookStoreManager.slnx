@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="src/BookStoreManager.API/BookStoreManager.API.csproj" />
+  <Project Path="src/BookStoreManager.Application/BookStoreManager.Application.csproj" />
+  <Project Path="src/BookStoreManager.Comunication/BookStoreManager.Comunication.csproj" />
+  <Project Path="src/BookStoreManager.Domain/BookStoreManager.Domain.csproj" />
+  <Project Path="src/BookStoreManager.Exception/BookStoreManager.Exception.csproj" />
+  <Project Path="src/BookStoreManager.Infrastructure/BookStoreManager.Infrastructure.csproj" />
+</Solution>
