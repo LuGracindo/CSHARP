@@ -15,13 +15,14 @@ namespace BookStoreManager.Application.AutoMapper
 
         private void RequestToEntity()
         {
-            CreateMap<RequestRegisterBookJson, Book>()
-                .ForMember(dest => dest.Id, config => config.Ignore());
+            CreateMap<RequestRegisterBookJson, Book>().ForMember(dest => dest.Id, config => config.Ignore());
+            CreateMap<RequestUpdateBookJson, Book>().ForMember(dest => dest.Id, opt => opt.Ignore());
         }
 
         private void EntityToResponse()
         {
             CreateMap<Book, ResponseRegisterBookJson>();
+            CreateMap<Book, ResponseShortGetAllBookJson>();            
         }
     }
 }

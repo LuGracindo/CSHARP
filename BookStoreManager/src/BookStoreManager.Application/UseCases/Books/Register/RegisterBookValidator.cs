@@ -1,4 +1,5 @@
 ﻿using BookStoreManager.Comunication.Requests;
+using BookStoreManager.Exception;
 using FluentValidation;
 
 namespace BookStoreManager.Application.UseCases.Books.Register
@@ -7,11 +8,11 @@ namespace BookStoreManager.Application.UseCases.Books.Register
     {
         public RegisterBookValidator() 
         {
-            RuleFor(book => book.Title).NotEmpty().WithMessage("Titulo Obrigatório").Length(2, 120).WithMessage("O Titulo deve ter entre 2 e 120 caracteres.");
-            RuleFor(book => book.Author).NotEmpty().WithMessage("Nome do Autor Obrigatório").Length(2, 120).WithMessage("O nome do Autor deve ter entre 2 e 120 caracteres.");
-            RuleFor(book => book.Price).GreaterThanOrEqualTo(0).WithMessage("O preço deve ser maior ou igual a zero.");
-            RuleFor(book => book.Stock).GreaterThanOrEqualTo(0).WithMessage("A quantidade deve ser maior ou igual a zero.");
-            RuleFor(book => book.Genre).IsInEnum().WithMessage("Gênero Inválido");
+            RuleFor(book => book.Title).NotEmpty().WithMessage(ResourceErrorMessages.TITLE_REQUIRED).Length(2, 120).WithMessage(ResourceErrorMessages.STRING_SIZE);
+            RuleFor(book => book.Author).NotEmpty().WithMessage(ResourceErrorMessages.AUTHOR_REQUIRED).Length(2, 120).WithMessage(ResourceErrorMessages.AUTHOR_SIZE);
+            RuleFor(book => book.Price).GreaterThanOrEqualTo(0).WithMessage(ResourceErrorMessages.PRICE_GREATER_OR_EQUAL_ZERO);
+            RuleFor(book => book.Stock).GreaterThanOrEqualTo(0).WithMessage(ResourceErrorMessages.QTN_GREATER_OR_EQUAL_ZERO);
+            RuleFor(book => book.Genre).IsInEnum().WithMessage(ResourceErrorMessages.INVALID_GENDER);
         }
     }
 }

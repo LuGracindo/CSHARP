@@ -19,7 +19,7 @@ namespace BookStoreManager.Infrastructure
         private static void AddRepositories(IServiceCollection services)
         {
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-            services.AddScoped<IBooksRepository, BooksRepository>();
+            services.AddScoped<IBooksRepository, BooksRepository>();            
         }
 
         private static void AddDbContext(IServiceCollection services, IConfiguration configuration)
